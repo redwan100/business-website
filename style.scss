@@ -25,14 +25,14 @@ body{
     font-family: 'Poppins';
 }
 
-// TODO: base code-------
+// TODO: base code---------------------------------------------------------
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-// TODO: Header styling start-----------
+// TODO: Header styling start----------------------------------------------
 .container{
     max-width: 1170px;
     margin: 0 auto;
@@ -126,7 +126,12 @@ body{
 
 
 
-// TODO: About section styling start-------------
+
+
+
+// TODO: About section styling start--------------------------------------------------------
+
+
 section{
     overflow: hidden;
 }
@@ -323,7 +328,8 @@ section{
 
 
 
-// TODO: Service section styling start--------
+// TODO: Service section styling start-----------------------------------------------------------
+
 
 .service{
    padding: 90px 0 110px;
@@ -488,7 +494,10 @@ section{
 
 
 
-// TODO: TWO ABOUT SECTION STYLING START ---------------
+
+
+
+// TODO: TWO ABOUT SECTION STYLING START ---------------------------------------------------------
 .two__about__section{
     padding: 70px 0px;
     background-color: #ebedf2;
@@ -536,8 +545,14 @@ section{
     }
 
     &__right__content{
-        padding: 0 3rem;
+        padding-left: 0;
         flex-basis: 50%;
+
+
+        &:nth-child(2){
+            padding-left: 3rem;
+            flex-basis: 56%;
+        }
     }
     &__icon{
         font-size: 3rem;
@@ -610,12 +625,24 @@ section{
         margin-bottom: 1rem;
 
     }
+    
+    &__left_img:nth-child(){
+        padding-left: 0;
+    }
+    &__left_img:nth-child(2){
+        padding-left: 3rem;
+    }
 
 
 }
 
 
-// TODO: FEATURE SECTION STYLING START------------------------------------
+
+
+
+
+
+// TODO: FEATURE SECTION STYLING START--------------------------------------------
 
 .feature{
     padding: 105px 0 85px;
@@ -659,7 +686,7 @@ section{
         color: #010101;
         font-family: "Poppins";
         display: inline-block;
-        z-index: 1;
+        z-index: 2;
         border: 2px solid #6c2b95;
         text-decoration: none;
         cursor: pointer;
@@ -683,10 +710,32 @@ section{
 
         }
 
+        &::after{
+            content: '';
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--pink);
+            position: absolute;
+            top: 0px;
+            right: 5px;
+            z-index: -1;
+            filter: blur(15px);
+            visibility: hidden;
+        }
+
+
+
         &:hover::before{
             transform-origin: top;
             transform: scaleY(1);
         }
+
+        &:hover::after{
+            visibility: visible;
+        }
+
+
         &:hover{
             color: var(--white);
         }
@@ -699,7 +748,7 @@ section{
 
 
     &__icon{
-        font-size: 18px;
+        font-size: 16px;
         margin-right: 6px;
         background: linear-gradient( -45deg, #6b2c94 32%, #fc01fd 100%);
         -webkit-background-clip: text;
@@ -824,5 +873,288 @@ section{
     }
 
 }
+
+
+
+
+
+// TODO: INTEGRATION SECTION STYLING --------------------
+
+.integration__section{
+    background-color: #f0f2f7;
+    padding: 120px 0px 55px;
+
+
+    &__wrapper{
+        // width: 100%;
+        display: flex;
+    }
+    &__left{
+        flex-basis: 60%;
+    }
+    &__right{
+        flex-basis: 40%;
+    }
+    &__right__title{
+        font-size: 40px;
+        font-weight: 800;
+        margin-bottom: 1.3rem;
+        line-height: 1.2;
+
+        span{
+            font-weight: 500;
+        }
+    }
+
+    &__right__description{
+        color: var(--dark);
+        margin-bottom: 1.3rem;
+    }
+
+
+    &__right__btn{
+        position: relative;
+    }
+
+    &__right__link{
+        text-decoration: none;
+        color: #0066ff;
+        position: relative;
+        font-size: 16px;
+        font-weight: 500;
+        position: relative;
+
+
+        &::before{
+            content: '';
+            width: 100%;
+            height: 3px;
+            border-radius: 20px;
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            background-color:#0066ff;
+            transform: scaleX(0);
+            transition: transform .3s ease;
+            transform-origin: right;
+        }
+
+        &:hover::before{
+            transform: scaleX(1);
+            transform-origin: left;
+        };
+        &:hover ~ &__right__icon{
+            left: 200px;
+            visibility: visible;
+        }
+    }
+
+    &__right__link:hover ~ &__right__icon{
+        left: 120px;
+        visibility: visible;
+    }
+
+    &__right__icon{
+        position: absolute;
+        font-size: 22px;
+        top: 4px;
+        left: 140px;
+        visibility: hidden;
+        transition: .2s ease;
+        transition-delay: 150ms;
+        background: linear-gradient( -45deg, #6b2c94 32%, #fc01fd 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+
+
+
+
+// TODO: TEAM SECTION STYLING START-----------------------------------
+
+.team__section{
+    padding: 118px 0px;
+
+    &__title__heading{
+        text-align: center;
+        font-size: 3rem;
+    }
+
+    &__title{
+        margin-bottom: 7rem;
+        background: linear-gradient( -45deg, #6b2c94 32%, #fc01fd 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    &__wrapper{
+        display: flex;
+    }
+
+    &__item{
+        flex-basis: 400px;
+        position: relative;
+        box-shadow: 0px 25px 20px rgba(0, 0, 0, 0.158);
+        margin-right: 20px;
+        border-radius: 10px;
+        width: 700px;
+    }
+
+   
+
+
+    &__item__img{
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        position: absolute;
+        top: -50px;
+        left: 20px;
+        border: 4px solid var(--white);
+        transition: all .5s;
+
+
+        img{
+            width: 100%;
+            height: 100%;
+            border-radius: 100%;
+            object-fit: cover;
+        }
+    }
+
+    
+
+    &__item__heading{
+        padding: 4rem 0 1rem 1rem;
+    }
+    &__item__title{
+        font-size: 25px;
+        font-weight: 800;
+    }
+    &__item__description{
+        font-size: 16px;
+        font-weight: 400;
+        background: var(--indigo);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    &__item__contact{
+        padding: 1rem 1.5rem 1.5rem 1rem;
+
+    }
+
+    &__item__contact__wrapper{
+        display: flex;
+        align-items: center;
+    }
+
+    &__item__text{
+        color: var(--dark);
+        font-size: 14px;
+    }
+
+    &__item__contact__icon{
+        color: var(--pink);
+        margin-right: 8px;
+    }
+
+    &__item__share__btn{
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        background-color: var(--indigo);
+        border-radius: 50px;
+        overflow: hidden;
+        transition: height .5s ease;
+    }
+
+
+
+
+
+
+    &__item__share__items{
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        top: -200px;
+        opacity: 0;
+        transition: .5s;
+        transition-delay: .1s;
+    }
+    &__item__share__icon{
+        color: var(--white);
+        font-size: 20px;
+    }
+
+    &__main__share__btn{
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        background-color: var(--indigo);
+        border-radius: 50px;
+        overflow: hidden;
+        transition: all .5s ease;
+        z-index: 2;
+        display: grid;
+        place-items: center;
+
+        
+    }
+
+    &__main__share__icon{
+        color: var(--white);
+        font-weight: 800;
+        font-size: 20px;
+    }
+
+
+
+    &__item:hover  &__item__share__btn{  
+        height: 110%;
+  }
+
+    &__item:hover &__item__share__items{
+        top: 30px;
+       opacity: 1;
+    }
+
+    &__item:hover &__item__img{
+        box-shadow: 0px 0px 0px 4px var(--indigo); 
+    }
+
+    &__item:hover &__main__share__btn{
+        background-color: var(--pink);
+    }
+
+
+    &__item__share__item{
+        margin-bottom: 5px;
+    }
+    &__item__share__icon{
+        text-decoration: none;
+        display: block;
+        transition: all .3s;
+
+        &:hover{
+            transform: translateX(10px);
+        }
+    }
+  
+}
+
+
+
 
 
