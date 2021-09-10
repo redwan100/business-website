@@ -21,6 +21,10 @@
     --light: #f8f9fa;
     --dark: #343a40;
 }
+
+html{
+    scroll-behavior: smooth;
+}
 body{
     font-family: 'Poppins';
 }
@@ -1156,5 +1160,154 @@ section{
 
 
 
+
+// TODO: FAQ SECTION STYLING START---------------------------
+
+
+.accordion{
+    padding: 1.5rem 1rem 1.25rem 1rem;
+
+
+    &__heading__title{
+        font-size: 40px;
+        text-align: center;
+    }
+
+    &__heading{
+        padding-bottom: 3rem;
+    }
+
+    &__wrapper{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    &__item{
+        border-radius: .25rem;
+        transition: all .5s ease;
+        position: relative;
+        overflow: hidden;
+        margin: .5rem;
+
+        &::before{
+            content: '';
+            width: 100%;
+            height: 100%;
+            background-color: var(--pink);
+            opacity: 0.3;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        &::after{
+            content: '';
+            width: 5px;
+            height: 100%;
+            background-color: var(--pink);
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            transition: all .5s ease-in;
+            transform-origin: left;
+            transition: transform all .5s;
+        }
+
+
+        &:nth-child(2){
+            &::before{
+            background-color: var(--indigo);
+
+            }
+            &::after{
+                background-color: var(--indigo);
+            }
+        }
+        &:nth-child(3){
+            &::before{
+            background-color: var(--orange);
+
+            }
+            &::after{
+                background-color: var(--orange);
+            }
+        }
+        &:nth-child(4){
+            &::before{
+            background-color: var(--teal);
+
+            }
+            &::after{
+                background-color: var(--teal);
+            }
+        }
+
+
+
+        &:hover::after{
+            width: 100%;
+            transform-origin: right;
+        }
+        &:hover{
+            color: var(--white);
+        }
+    }
+
+
+    &__item:hover &__title {
+        color: white;
+    }
+    &__item:hover &__description {
+        color: white;
+    }
+    &__item:hover &__icon {
+        color: white;
+    }
+
+    &__header{
+        display: flex;
+        line-height: 25px;
+        padding: 1.25rem 1.25rem 1.25rem 1rem;
+        cursor: pointer;
+        // justify-content: space-between;
+    }
+    &__icon{
+        font-size: 25px;
+        transition: all .5s ease;
+    }
+    &__title{
+        font-size: 20px;
+        font-weight: 500;
+        transition: all .3s;
+    }
+
+    &__content{
+        height: 0;
+        overflow: hidden;
+        transition: height .5s ease;
+    }
+    &__description{
+        padding: 0 1.25rem 1.25rem 3rem;
+        font-size: 15px;
+        color: var(--dark);
+        transition: all .5s;
+    }
+
+}
+
+.accordion__open{
+    & .accordion__title{
+        font-weight: 800;
+    }
+
+    & .accordion__icon{
+        transform: rotate(180deg);
+        font-weight: 700;
+        color: var(--red);
+        font-size: 30px;
+    }
+
+}
 
 

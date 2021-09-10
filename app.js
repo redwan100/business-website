@@ -21,6 +21,7 @@ window.addEventListener('scroll',()=> {
 
 
 // TODO: SERVICE BOX PARALLAX EFFECT-------------------
+
 const serviceSection = document.querySelector('.service')
 const box1 = document.querySelector('.box1');
 const box2 = document.querySelector('.box2');
@@ -36,6 +37,69 @@ window.addEventListener("scroll", () => {
     const screenPos = window.innerHeight / 2;
     const value = window.scrollY / 2;
     if (screenPos > pos ) {
-
+        
     }
 })
+
+
+
+
+// TODO: FAQ SECTION TOGGLER SCRIPT----------------
+
+const accordionItems = document.querySelectorAll('.accordion__item');
+
+accordionItems.forEach((accordion) => {
+    const accordionHeader = accordion.querySelector('.accordion__header');
+
+    accordionHeader.addEventListener('click', () => {
+        const openItems = document.querySelector('.accordion__open');
+        toggleItem(accordion)
+        if (openItems && openItems !== accordion) {
+            toggleItem(openItems)
+        }
+    })
+})
+
+function toggleItem(item) {
+    const accordionContent = item.querySelector('.accordion__content');
+
+    if (item.classList.contains('accordion__open')) {
+        accordionContent.removeAttribute('style');
+        item.classList.remove('accordion__open');
+    } else {
+        accordionContent.style.height = accordionContent.scrollHeight + 'px';
+        item.classList.add('accordion__open')
+    }
+
+
+}
+
+
+
+// TODO: BUTTON PARALLAX EFFECT----------------------------------------
+const team = document.querySelector(".team__section__item");
+console.log(team);
+const allBtn = document.querySelectorAll('.down__btn');
+allBtn.forEach((btn) => {
+    btn.addEventListener('mousemove', (e) => {
+        const pos = btn.getBoundingClientRect();
+        
+        const xAxis = e.clientX - pos.left - pos.width / 2;
+        const yAxis = e.clientY - pos.top - pos.height / 2;
+    
+        btn.style.transform = `translate(${+xAxis * 0.5}px, ${yAxis}px)`
+        btn.style.transform = `translate3d(${+yAxis * 0.5}px, ${yAxis}px, 12deg)`
+        btn.style.transition = `all .3s`
+        
+    })
+
+    btn.addEventListener(('mouseleave'), () => {
+ 
+        btn.style.transform = `translate(0,0)`;
+   }
+
+    )
+})
+
+
+
