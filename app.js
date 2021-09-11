@@ -101,5 +101,31 @@ allBtn.forEach((btn) => {
     )
 })
 
+// TODO: MESSAGE BOX HEIGHT SCRIPT------------------------
+
+const textAria = document.querySelector('textarea');
+textAria.addEventListener('keyup', (e) => {
+    let height = e.target.scrollHeight;
+    textAria.style.height = '50px';
+    textAria.style.height = `${height}px`;
+})
 
 
+
+
+// TODO: CLICK TO SCROLL TOP SCRIPT---------------------
+
+const scrollTopBtn = document.querySelector('.scrolltop__btn');
+scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo(0, 0);
+})
+
+window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    if (scrollTop > 600) {
+        scrollTopBtn.classList.add('btn__active');
+    } else {
+        scrollTopBtn.classList.remove('btn__active')
+        
+    }
+})
