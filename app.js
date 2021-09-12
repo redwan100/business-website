@@ -2,16 +2,14 @@ const shape4 = document.querySelector('.shape4 img');
 const rightImg = document.querySelector('.about__section-right');
 const rightImg1 = document.querySelector('.about__section-right img');
 const aboutLeft = document.querySelector('.about__section-left');
-const navBar = document.querySelector('.main__header')
-
+const navBar = document.querySelector('.main__header');
 
 window.addEventListener('scroll',()=> {
     const scrollTop = window.scrollY;
     if (scrollTop + window.innerHeight > shape4.offsetTop) {
-        shape4.style.transform = `translateY(${scrollTop * 1.2}px) `;
+        shape4.style.transform = `translateY(${scrollTop * .8}px) `;
         rightImg.style.transform = `translateY(${scrollTop * .60 }px)`;
         aboutLeft.style.transform = `translateY(${scrollTop * -.80 }px) `;
-        navBar.style.transform = `translateY(${scrollTop * 0.77}px) `;
         rightImg1.style.width = (700 + scrollTop / 2) + 'px';
 
     }
@@ -32,12 +30,13 @@ const box6 = document.querySelector('.box6');
 
 
 
+let scrollAmount = 0;
 window.addEventListener("scroll", () => {
-    const pos = serviceSection.getBoundingClientRect().top;
-    const screenPos = window.innerHeight / 2;
-    const value = window.scrollY / 2;
-    if (screenPos > pos ) {
-        
+    const scrollTop = window.scrollY;
+    if (scrollTop + window.innerHeight > serviceSection.offsetTop) {
+        scrollAmount++;
+        // box1.style.transform = `translateY(${scrollAmount * .015}px)`;
+        // console.log('scroll');
     }
 })
 
@@ -127,5 +126,15 @@ window.addEventListener('scroll', () => {
     } else {
         scrollTopBtn.classList.remove('btn__active')
         
+    }
+})
+
+window.addEventListener("scroll", () => {
+    const scrollTop = window.scrollY;
+    if (scrollTop > 150) {
+        navBar.classList.add("sticky");
+        navBar.style.transition = `all .5s ease`
+    } else {
+        navBar.classList.remove('sticky');
     }
 })

@@ -27,9 +27,27 @@ html{
 }
 body{
     font-family: 'Poppins';
+    overflow-x: hidden;
 }
 
+// TODO: CUSTOM SCROLLBAR ------------------
 
+::-webkit-scrollbar{
+    width: 10px;
+    height: 50px;
+
+
+}
+::-webkit-scrollbar-track{
+    box-shadow: inset 0 0 10px 0 rgba(231, 14, 177, 0.192);
+    border-radius: 15px;
+}
+::-webkit-scrollbar-thumb{
+    background:linear-gradient(45deg,var(--indigo)0%, var(--pink)60%);
+    border-radius: 15px;
+    height: 200px;
+
+}
 // TODO: scroll top btn styling--------------
 .scrolltop__btn{
     width: 0px;
@@ -45,7 +63,7 @@ body{
     cursor: pointer;
     overflow: hidden;
    visibility: hidden;
-   transition: all 2s cubic-bezier(0.075, 0.82, 0.165, 3);
+   transition: all .7s cubic-bezier(0.075, 0.82, 0.165, 2);
 
     .scrolltop__icon{
         font-size: 40px;
@@ -92,6 +110,7 @@ body{
 // TODO: Header styling start----------------------------------------------
 .container{
     max-width: 1170px;
+    width: 1140px;
     margin: 0 auto;
 }
 .main__header{
@@ -101,7 +120,16 @@ body{
     padding: 1.5rem 0;
     box-shadow: 5px 0 10px rgba(0,0,0,0.1);
     z-index: 100;
+    transition: all 1s;
 
+}
+.main__header.sticky{
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: .7rem 0;
+    box-shadow: 5px 0 10px rgba(0,0,0,0.1);
+    transition: all 1s !important;
 }
 .nav__bar{
     display: flex;
@@ -193,7 +221,7 @@ section{
     overflow: hidden;
 }
 .about{
-    width: 100vw;
+    // width: 100%;
     background-color: #fafafa;
     padding: 245px 0 130px 0;
     position: relative;
@@ -215,12 +243,17 @@ section{
     position: relative;
 
     .row{
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(400px,1fr));
+        align-items: center;
     }
 
-    &-left{
-        flex-basis: 50%;
-    }
+    // &-left{
+    //    grid-column:auto / span 6;
+    // }
+    // &__right{
+    //     grid-column: auto / span 6
+    // }
     .title{
         font-size: 55px;
         font-weight: 800;
@@ -236,8 +269,9 @@ section{
 
 
 .about__section-left{
-    flex: 0 0 40%;
+    // flex: 0 0 40%;
     z-index: 2;
+    transition: all .5s;
 }
 .about__section-title{
     margin-bottom: 1rem;
@@ -368,18 +402,23 @@ section{
     position: absolute;
     top: 10%;
     left: 0;
-    transition: all .4s;
     z-index: 1;
 
     img{
         max-width: 100%;
         height: auto;
+        transition: all 1.5s ease;
     }
 }
 
 .about__section-right{
-    flex: 0 0 60%;
+    // flex: 0 0 60%;
     z-index: 2;
+    transition: all .5s;
+
+    img{
+        transition: all 0.01s;
+    }
 }
 
 
@@ -414,7 +453,7 @@ section{
     padding-top: 1rem;
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(340px,1fr));
+    grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
     grid-gap: 1rem;
 }
 .service__section_box{
@@ -586,9 +625,11 @@ section{
 
     &__wrapper{
         width: 100%;
-        display: flex;
+        // display: flex;
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(400px, 1fr));
         justify-content: space-between;
-        flex-wrap: wrap;
+        // flex-wrap: wrap;
         margin-bottom: 5rem;
         padding: 0 4rem;
 
@@ -597,20 +638,24 @@ section{
         }
     }
 
-    &__left__content{
-        padding: 0 2rem;
-        flex-basis: 50%;
-    }
+    // &__left__content{
+    //     padding: 0 2rem;
+    //     flex-basis: 50%;
+    // }
 
     &__right__content{
-        padding-left: 0;
-        flex-basis: 50%;
+        // padding-left: 0;
+        // flex-basis: 50%;
 
 
         &:nth-child(2){
             padding-left: 3rem;
-            flex-basis: 56%;
+            // flex-basis: 56%;
         }
+        // &:nth-child(1){
+        //     padding-left: 3rem;
+        //     // flex-basis: 56%;
+        // }
     }
     &__icon{
         font-size: 3rem;
@@ -706,13 +751,15 @@ section{
     padding: 105px 0 85px;
 
     &__wrapper{
-        display: flex;
-        flex-wrap: wrap;
+        // display: flex;
+        // flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
         justify-content: space-between;
     }
 
     &__left__content{
-        flex-basis: 50%;
+        // flex-basis: 50%;
         padding: 35px 0px 0px 35px;
     }
 
@@ -818,7 +865,7 @@ section{
 
     &__right__content{
         padding-left: 3rem;
-        flex-basis: 50%;
+        // flex-basis: 50%;
     }
 
     &__right__wrapper{
@@ -947,16 +994,19 @@ section{
 
     &__wrapper{
         // width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-around;
+        // display: flex;
+        // flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        justify-content: center;
+        grid-gap: 8rem;
     }
-    &__left{
-        flex-basis: 60%;
-    }
-    &__right{
-        flex-basis: 40%;
-    }
+    // &__left{
+    //     flex-basis: 60%;
+    // }
+    // &__right{
+    //     flex-basis: 40%;
+    // }
     &__right__title{
         font-size: 40px;
         font-weight: 800;
@@ -1052,18 +1102,35 @@ section{
     }
 
     &__wrapper{
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(12,1fr);
+        justify-content: center;
+        align-items: center;
+        grid-row-gap: 5rem;
+        grid-template-areas: 
+        "a a a b b b c c c d d d";
+        grid-gap: 10px;
 
     }
 
+    .item1{
+        grid-area: a;
+    }
+    .item2{
+       grid-area: b;
+    }
+    .item3{
+       grid-area: c;
+    }
+    .item4{
+       grid-area: d;
+    }
+
     &__item{
-        flex-basis: 400px;
         position: relative;
         box-shadow: 0px 15px 40px 0 rgba(0, 0, 0, 0.158);
-        margin-right: 20px;
+        margin-right: 5px;
         border-radius: 10px;
-        width: 700px;
-        z-index: 22;
     }
 
    
@@ -1237,9 +1304,13 @@ section{
     }
 
     &__wrapper{
-        display: flex;
-        justify-content: space-around;
+        // display: flex;
+        // justify-content: space-around;
+        // // flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
+    
 
     &__item{
         border-radius: .25rem;
@@ -1766,7 +1837,8 @@ section{
     &__wrapper{
         padding-top: 3rem;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
+        flex-wrap: wrap;
     }
     &__title{
         margin-top: 2rem;
@@ -1790,7 +1862,6 @@ section{
     }
     &__links__left__wrapper{
         display: flex;
-        justify-content: space-between;
     }
     &__links__title{
         color: var(--white);
@@ -1912,3 +1983,232 @@ section{
         color: var(--pink);
     }
 }
+
+
+
+
+
+
+
+
+// TODO: MOBILE RESPONSIVENESS DESIGN-----------------------
+@media screen and (max-width:576px) {
+    .container{
+        width: 90%;
+    }
+
+    .about__section-wrapper{
+        grid-template-columns: repeat(12,1fr);
+        grid-template-areas: 
+        "a a a a a a a a a a a a";
+        .row{
+            grid-template-columns: repeat(auto-fit,minmax(1fr,1fr));
+
+            margin-bottom: 3em;
+        }
+        .title{
+            font-size: 40px;
+            text-align: center;
+
+        }
+        .about__section-description{
+            font-size: 15px;
+            // width: 300px;
+            text-align: center;
+            margin: 0 auto;
+            margin-bottom: 2em;
+        }
+
+        .about__section-button{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2em;
+        }
+        
+    }
+
+    
+
+    .service{
+
+        .service__section_heading{
+            h1{
+                font-size: 40px;
+               
+            }
+        }
+
+        .service__section_wrapper{
+            justify-content: center;
+            align-items: center;
+            padding: 0 10rem 2rem 10rem;
+        }
+    }
+
+
+    .two__about__section{
+
+
+        .two__about__section__wrapper{
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(500px, 1fr));
+            padding:0 3rem;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .two__about__section__left__img{
+            width: 70%;
+            margin: 0 auto;
+            margin-bottom: 2rem;
+
+            img{
+                width: 100%;
+            }
+        }
+
+        .two__about__section__right__content{
+            width: 90%;
+        }
+
+        .content2{
+            width: 90%;
+            padding-left: 3rem;
+        }
+    }
+
+
+
+
+
+    .feature{
+
+
+        &__wrapper{
+    
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(1fr,1fr));
+            justify-content: center;
+            align-items: center;
+        }
+
+        &__left__content{
+
+            padding-bottom: 3rem;
+        }
+    
+        &__right__content{
+            padding-left: unset;
+        }
+
+    }
+    
+
+
+    .integration__section{
+        &__wrapper{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            justify-content: center;
+            grid-gap: 8rem;
+        }
+
+        .integration__section__left{
+            width: 95%;
+            margin-bottom: unset;
+
+            img{
+                width: 100%;
+            }
+        }
+
+        .integration__section__right{
+            margin-top: -5rem;
+        }
+    }
+
+
+
+
+    .team__section{
+
+        &__wrapper{
+            grid-template-columns: repeat(12,1fr);
+            justify-content: center;
+            align-items: center;
+            grid-template-areas: 
+            ". . a a a a a a a a ."
+            ". . b b b b b b b b ."
+            ". . c c c c c c c c ."
+            ". . d d d d d d d d .";
+           grid-row-gap: 5em;
+    
+        }
+    
+        .item1{
+            grid-area: a;
+        }
+        .item2{
+           grid-area: b;
+        }
+        .item3{
+           grid-area: c;
+        }
+        .item4{
+           grid-area: d;
+        }
+
+        &__title__heading{
+            text-align: center;
+            font-size: 2.3rem;
+        }
+    }
+
+
+
+    .price{
+        &__wrapper{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px 1fr));
+        }
+
+        &__heading{
+            font-size: 2.3rem;
+        }
+    }
+
+    
+
+    .footer{
+
+        .footer__news{
+            display: block;
+            width: 100%;
+        }
+
+        .footer__links__left{
+            display: block;
+            margin-bottom: 3rem;
+        }
+
+        .footer__newsletter__logo{
+            display: none;
+        }
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
