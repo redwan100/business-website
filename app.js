@@ -18,6 +18,31 @@ window.addEventListener('scroll',()=> {
 
 
 
+const closBtn = document.querySelector('.nav__bar__close');
+const nav = document.querySelector('.nav__bar-items');
+const menuBtn = document.querySelector('.nav__bar__menu');
+
+menuBtn.addEventListener("click", () => {
+    if (menuBtn) {
+        nav.classList.add("active__menu")
+    }
+})
+closBtn.addEventListener("click", () => {
+    if (closBtn) {
+        nav.classList.remove("active__menu")
+    }
+})
+
+// TODO: CUSTOM PROGRESS BAR HEIGHT SCRIPT----------------------------
+
+const progressBar = document.querySelector('.progressbar__line');
+
+window.addEventListener('scroll', () => {
+    let totalHeight = document.body.scrollHeight - window.innerHeight;
+    let progress = (window.pageYOffset / totalHeight) * 100;
+    progressBar.style.height = progress + '%';
+})
+
 // TODO: SERVICE BOX PARALLAX EFFECT-------------------
 
 const serviceSection = document.querySelector('.service')
