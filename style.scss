@@ -2031,7 +2031,7 @@ section{
 
 
 
-// TODO: MOBILE RESPONSIVENESS DESIGN-----------------------
+// TODO: MOBILE RESPONSIVENESS DESIGN--------------------------------------------
 @media screen and (max-width:576px) {
     .container{
         width: 90%;
@@ -2071,6 +2071,7 @@ section{
 
 
 .main__header{
+    padding: 1rem 0;
     position: relative;
     .nav__bar__menu{
         display: block;
@@ -2175,9 +2176,17 @@ section{
         }
         
     }
-
+    .about::before{
+        width: 100%;
+        height: 100%;
+    }
     
-
+.shape2{
+    top: 0;
+}
+.shape3{
+    top: -10%;
+}
     .service{
 
         .service__section_heading{
