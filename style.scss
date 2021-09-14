@@ -41,8 +41,8 @@ body{
     height: 200px;
     border-radius: 20px;
     border: 2px solid orange;
-    z-index: 10;
-    // overflow: hidden;
+    z-index: 10000;
+    overflow: hidden;
     
 
     .progressbar__line{
@@ -283,6 +283,7 @@ section{
         background-repeat: no-repeat;
     }
 
+
 }
 
 .about__section-wrapper{
@@ -470,6 +471,27 @@ section{
 .service{
    padding: 90px 0 110px;
    position: relative;
+
+   &:hover::after{
+    letter-spacing: 1rem;
+    color: rgba(88, 86, 86, 0.9);
+
+   }
+
+  
+   &::after{
+    content:'SERVICES';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 3em;
+    font-weight: bold;
+    // letter-spacing: 10px;
+    color: rgba(88, 86, 86, 0.2);
+    transition: all .3s ease-in;
+
+}
 
    .service__section_heading{
        font-size: 25px;
@@ -1030,6 +1052,29 @@ section{
 .integration__section{
     background-color: #f0f2f7;
     padding: 120px 0px 55px;
+    position: relative;
+
+    &:hover::after{
+        letter-spacing: 1rem;
+        color: rgba(88, 86, 86, 0.9);
+    
+       }
+    
+      
+       &::after{
+        content:'SPONSOR';
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 3em;
+        font-weight: bold;
+        // letter-spacing: 10px;
+        color: rgba(88, 86, 86, 0.7);
+        transition: all .3s ease-in;
+    
+    }
+    
 
 
     &__wrapper{
@@ -1128,6 +1173,29 @@ section{
 
 .team__section{
     padding: 118px 0px;
+    position: relative;
+
+    &:hover::after{
+        letter-spacing: 1rem;
+        color: rgba(88, 86, 86, 0.9);
+    
+       }
+    
+      
+       &::after{
+        content:'OUR TEAM';
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 3em;
+        font-weight: bold;
+        // letter-spacing: 10px;
+        color: rgba(88, 86, 86, 0.2);
+        transition: all .3s ease-in;
+    
+    }
+    
 
     &__title__heading{
         text-align: center;
@@ -1331,7 +1399,30 @@ section{
 
 
 .accordion{
-    padding: 1.5rem 1rem 1.25rem 1rem;
+    padding: 2rem 1rem 1.25rem 1rem;
+    position: relative;
+
+    &:hover::after{
+        letter-spacing: 1rem;
+        color: rgba(88, 86, 86, 0.9);
+    
+       }
+    
+      
+       &::after{
+        content:'FAQ';
+        position: absolute;
+        top: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 3em;
+        font-weight: bold;
+        // letter-spacing: 10px;
+        color: rgba(88, 86, 86, 0.2);
+        transition: all .3s ease-in;
+    
+    }
+    
 
 
     &__heading__title{
@@ -1485,6 +1576,28 @@ section{
 
 .price{
     padding: 120px 0 100px;
+    position: relative;
+
+    &:hover::after{
+        letter-spacing: 1rem;
+        color: rgba(88, 86, 86, 0.9);
+    
+       }
+  
+       &::after{
+        content:'PRICE';
+        position: absolute;
+        top: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 3em;
+        font-weight: bold;
+        // letter-spacing: 10px;
+        color: rgba(88, 86, 86, 0.2);
+        transition: all .3s ease-in;
+    
+    }
+    
 
     &__heading{
         font-size: 3rem;
@@ -1780,6 +1893,28 @@ section{
     margin-top: 140px;
     padding: 0px 0px 65px;
     position: relative;
+
+    &:hover::after{
+        letter-spacing: 1rem;
+        color: rgba(88, 86, 86, 0.9);
+    
+       }
+    
+      
+       &::after{
+        content:'CONTACT';
+        position: absolute;
+        top: -90px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 3em;
+        font-weight: bold;
+        // letter-spacing: 10px;
+        color: rgba(8, 7, 7, 0.2);
+        transition: all .3s ease-in;
+    
+    }
+    
 
     &::before{
         content: '';
