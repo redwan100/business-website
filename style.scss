@@ -475,7 +475,6 @@ section{
    &:hover::after{
     letter-spacing: 1rem;
     color: rgba(88, 86, 86, 0.9);
-
    }
 
   
@@ -488,8 +487,12 @@ section{
     font-size: 3em;
     font-weight: bold;
     // letter-spacing: 10px;
-    color: rgba(88, 86, 86, 0.2);
+    // color: rgba(88, 86, 86, 0.2);
     transition: all .3s ease-in;
+    -webkit-text-fill-color: transparent; 
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(88, 86, 86, 0.4);
+
 
 }
 
@@ -1072,6 +1075,9 @@ section{
         // letter-spacing: 10px;
         color: rgba(88, 86, 86, 0.7);
         transition: all .3s ease-in;
+        -webkit-text-fill-color: transparent; 
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: rgba(88, 86, 86, 0.4);
     
     }
     
@@ -1193,6 +1199,9 @@ section{
         // letter-spacing: 10px;
         color: rgba(88, 86, 86, 0.2);
         transition: all .3s ease-in;
+        -webkit-text-fill-color: transparent; 
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: rgba(88, 86, 86, 0.4);
     
     }
     
@@ -1420,6 +1429,9 @@ section{
         // letter-spacing: 10px;
         color: rgba(88, 86, 86, 0.2);
         transition: all .3s ease-in;
+        -webkit-text-fill-color: transparent; 
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: rgba(88, 86, 86, 0.4);
     
     }
     
@@ -1595,6 +1607,9 @@ section{
         // letter-spacing: 10px;
         color: rgba(88, 86, 86, 0.2);
         transition: all .3s ease-in;
+        -webkit-text-fill-color: transparent; 
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: rgba(88, 86, 86, 0.4);
     
     }
     
@@ -1912,7 +1927,9 @@ section{
         // letter-spacing: 10px;
         color: rgba(8, 7, 7, 0.2);
         transition: all .3s ease-in;
-    
+        -webkit-text-fill-color: transparent; 
+        -webkit-text-stroke-width: 2px;
+        -webkit-text-stroke-color: rgba(88, 86, 86, 0.4);
     }
     
 
@@ -2451,6 +2468,14 @@ section{
 
 
     .team__section{
+
+        &:hover::after{
+            font-size: 2rem;
+            letter-spacing: 6px;
+        }
+        &::after{
+            font-size: 2rem;
+        }
 
         &__wrapper{
             grid-template-columns: repeat(12,1fr);
