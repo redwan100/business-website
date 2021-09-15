@@ -152,7 +152,7 @@ body{
 }
 .main__header{
     position: absolute;
-    width: 100vw;
+    width: 100%;
     background-color: #fff;
     padding: 1.5rem 0;
     box-shadow: 5px 0 10px rgba(0,0,0,0.1);
@@ -414,7 +414,7 @@ section{
 
 .shape3{
     position: absolute;
-    top: 0;
+    top: -20px;
     right: 0;
     animation: floatX 4s ease-in-out infinite;
 
